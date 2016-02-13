@@ -1,0 +1,3 @@
+dev-nexus.i*
+build/
+.gradle/
