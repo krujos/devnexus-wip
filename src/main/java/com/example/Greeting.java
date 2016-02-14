@@ -6,6 +6,7 @@ import lombok.Setter;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import java.util.Date;
 
 import static javax.persistence.GenerationType.AUTO;
 
@@ -18,7 +19,7 @@ public class Greeting {
 
     @Getter
     @Setter
-    private long date;
+    private Date date;
 
     @Id
     @GeneratedValue(strategy = AUTO)
@@ -26,7 +27,7 @@ public class Greeting {
 
     public Greeting() {}
 
-    public Greeting(String name, long date) {
+    public Greeting(String name, Date date) {
         this.name = name;
         this.date = date;
     }

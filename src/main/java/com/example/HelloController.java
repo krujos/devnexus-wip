@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.Instant;
+import java.util.Date;
 
 import static org.apache.log4j.Logger.getLogger;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
@@ -23,7 +24,7 @@ public class HelloController {
     public String hello(@RequestParam(value = "person", required = false, defaultValue = "nobody") String person) {
         log.info("I will be greeting " + person + " soon");
 
-        Greeting greeting = new Greeting(person, Instant.now().toEpochMilli());
+        Greeting greeting = new Greeting(person, Date.from(Instant.now()));
         repository.save(greeting);
         return "hello " + person;
     }
